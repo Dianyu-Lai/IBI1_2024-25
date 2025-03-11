@@ -11,3 +11,16 @@ print(c,f)
 because c=90<f=95
 the first way is faster than the second
 '''
+
+x = True
+y = False
+w = x and y
+print("w:",w)
+'''
+Truth table for w (x and y)
+| x     | y     | w (x and y) | x or y 
+| True  | True  | True        | True
+| True  | False | False       | True
+| False | True  | False       | True
+| False | False | False       | False
+'''
