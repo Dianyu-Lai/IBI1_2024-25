@@ -3,8 +3,9 @@
 # repeat taking first_n and second_n (integer) from {1,2,3,4,5} with equal possibility until they are equal
 
 # Import libraries
-# randint allows drawing a random number,
+# randint generates a random integer within a specified inclusive range
 # e.g. randint(1,5) draws a number between 1 and 5
+
 from random import randint
 
 # ceil takes the ceiling of a number, i.e. the next higher integer.
