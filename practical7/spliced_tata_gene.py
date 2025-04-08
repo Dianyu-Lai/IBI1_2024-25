@@ -1,20 +1,46 @@
 import re
-filename=input('one	of three possible splice donor/acceptor combination (GTAG,GCAG,ATAC)')
-input=open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')#open the file
-output=open(f'{filename}_spliced_genes.fa','w')#create a new file to write the output
-current_gene=None#initialize a variable to store the current gene name
-current_sequence=[]#initialize an empty list to store the current sequence
-for line in input: #iterate through each line in the file
-    if re.search(r'^>\w+mRNA',line):#check gene name line
-        if current_gene and current_sequence:#if the current gene and sequence are not empty
-            full_sequence=''.join(line.strip() for line in current_sequence)#join the sequence lines
-            if re.search(r'TAT[AT]A[AT]',full_sequence):#check if the sequence includes TATWAW
-                output.write(current_gene[0])
-                output.write('\n')
-                output.write(full_sequence)
-        current_gene=re.findall(r'(>\w+)_mRNA',line)#extract the gene name
-        current_sequence=[]
-    else:#for seqenece line
-        current_sequence.append(line)   #delete the enter
-input.close()#close the input file
-output.close()#close the output file
+
+splice_combinations=['GTAG','GCAG','ATAC']
+splice_input=input(f'enter splice combination {splice_combinations[:]}').strip().upper()
+while splice_input not in splice_combinations: #check if the input is valid
+    print('invalid input. try again')
+    splice_input=input(f'enter splice combination {splice_combinations[:]}').strip().upper()
+output_filename=f'{splice_input}_spliced_genes.fa'
+
+with open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa', 'r') as infile, open(output_filename, 'w') as outfile:
+    current_gene=[]#initialize a variable to store the current gene name
+    current_sequence=[]#initialize an empty list to store the current sequence
+    tata_pattern=re.compile(r'TATA[AT]A[AT]')#define a regular expression pattern to match TATWAW
+    gene_name_pattern=re.compile(r'gene:(\S+)')#define a regular expression pattern to match gene name
+    splice_pattern=re.compile(fr'{splice_input[:2]}.*?{splice_input[-2:]}')#define a regular expression pattern to match splice signal
+
+    for line in infile: #iterate through each line in the file
+        if gene_name_pattern.search(line):#check gene name line
+            if current_gene and current_sequence:#if the current gene and sequence are not empty
+                full_sequence=''.join(seq.strip() for seq in current_sequence)#join the sequence lines
+                if splice_pattern.search(full_sequence):#check if the sequence includes splice signal
+                    splice_seq=splice_pattern.findall(full_sequence)
+                    tata_box_number=0
+                    for i in splice_seq:
+                        if tata_pattern.search(i):#check if the spliced sequence includes TATWAW
+                            tata_box_seq=tata_pattern.findall(i)
+                            tata_box_number+=len(tata_box_seq)
+                            outfile.write(f'>{current_gene[0]}, the number of instances of TATA box is {tata_box_number} \n')
+                            outfile.writelines(current_sequence)#write the sequence to the output file                       
+            current_gene=gene_name_pattern.findall(line)#extract the gene name
+            current_sequence=[]
+
+        else:#for sequence lines
+            current_sequence.append(line)  #add the sequence line to the current sequence list
+
+    #write the last gene and sequence to the output file
+    if current_gene and current_sequence:#if the current gene and sequence are not empty
+        full_sequence=''.join(line.strip() for line in current_sequence)#join the sequence lines
+        if splice_pattern.search(full_sequence):#check if the sequence includes TATWAW
+            splice_seq=splice_pattern.findall(full_sequence)
+            for i in splice_seq:
+                if tata_pattern.search(i):#check if the spliced sequence includes TATWAW
+                    tata_box_seq=tata_pattern.findall(i)
+                    tata_box_number+=len(tata_box_seq)
+            outfile.write(f'>{current_gene[0]}, the number of instances of TATA box is {tata_box_number} \n')
+            outfile.writelines(current_sequence)
