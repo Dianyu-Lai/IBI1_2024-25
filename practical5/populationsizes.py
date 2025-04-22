@@ -1,25 +1,35 @@
-import matplotlib.pyplot as plt#import library
+import matplotlib.pyplot as plt
 
-uk_countries=[57.11,3.13,1.91,5.45]
-china_provinces=[65.77,41.88,45.28,61.27,85.15]
-uk=["England","Wales","Northern Ireland","Scotland"]#name of components
-zj_neighboring=["Zhejiang","Fujian","Jiangxi","Anhui","Jiangsu"]
-sorted_uk=sorted(zip(uk_countries,uk))
-sorted_zhejiang=sorted(zip(china_provinces,zj_neighboring))
-uk_sorted_countries,uk_sorted=zip(*sorted_uk)
-china_sorted_provinces,zj_sorted_neighboring=zip(*sorted_zhejiang)
+#create lists storing the population and names
+uk=[57.11,3.13,1.91,5.45]
+cn=[65.77,41.88,45.28,61.27,85.15]
+uk_name=["England","Wales","Northern Ireland","Scotland"]
+cn_name=["Zhejiang","Fujian","Jiangxi","Anhui","Jiangsu"]
 
-print(list(uk_sorted_countries))
-print(list(china_sorted_provinces))#population of each components
-color1=['blue','red','yellow','green']#colors used in pie chart
+#sort the list based on population, while not change the matches
+sorted_uk=sorted(zip(uk,uk_name),reverse=True)
+sorted_cn=sorted(zip(cn,cn_name),reverse=True)
+uk_sorted,uk_sorted_name=zip(*sorted_uk)
+cn_sorted,cn_sorted_name=zip(*sorted_cn)
+
+#print the sorted lists
+print(list(uk_sorted_name),list(uk_sorted))
+print(list(cn_sorted_name),list(cn_sorted))
+
+#colors used in pie chart
+color1=['blue','red','yellow','green']
 color2=color1.append('pink')
 
-plt.figure(figsize=(6,6))#pie chart 1 to draw England
-plt.pie(uk_countries,labels=uk,colors=color1,autopct='%1.1f%%')
+#pie chart 1 to draw England
+plt.figure(figsize=(6,6))
+plt.pie(uk_sorted,labels=uk_sorted_name,colors=color1,autopct='%1.1f%%')
 plt.title('population distribution of England')
+plt.legend()
 plt.show()
 
-plt.figure(figsize=(6,6))#pie chart 2 to draw zhejiang neighboring provinces
-plt.pie(china_provinces,labels=zj_neighboring,colors=color2,autopct='%1.1f%%')
+#pie chart 2 to draw zhejiang neighboring provinces
+plt.figure(figsize=(6,6))
+plt.pie(cn_sorted,labels=cn_sorted_name,colors=color2,autopct='%1.1f%%')
 plt.title('population distribution of Zhejiang neighboring provinces')
+plt.legend()
 plt.show()
