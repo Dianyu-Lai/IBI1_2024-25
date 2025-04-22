@@ -4,13 +4,9 @@ for i in range(1,11):
     i+=1
     print(a)
 """
-BEGIN
-    SET a = 0
-    SET b = 1
-    FOR i FROM 1 TO 11 DO
-        a = a + b
-        b = b + 1
-        PRINT a
-    END FOR
-END
+initialize a and step i
+for every loop
+add a and the current i up
+replace a with the new value
+continue this step until end
 """
