@@ -1,0 +1,12 @@
+i am curious about the correlation between country income and DALYs.
+from the data frame, i choose World Bank Low Income data and World Bank High Income data for comparsion.
+i will plot the line graph containing the two country types with the x-axis years and y-axis DALYs
+i expect to find higher income level countries have lower DALYs.
+
+code line 42-52
+
+Discussion: a significant difference in DALYs between low and high income countries can be observed from the plot.
+The plot shows that the DALYs of low income countries are generally lower than those of high income countries.
+However, there are some countries with very high DALYs in both groups, like China and India,
+which may be due to the fact that these countries have a large number of low income individuals.
+Therefore, it is important to consider the specific country when interpreting the results.
