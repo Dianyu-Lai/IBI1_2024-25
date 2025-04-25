@@ -11,9 +11,10 @@ is_1990=dalys_data['Year']==1990
 print(dalys_data.loc[is_1990,'DALYs'])
 
 uk=dalys_data.loc[dalys_data.Entity=='United Kingdom',['DALYs','Year']]
-uk_mean=dalys_data.loc[dalys_data.Entity=='United Kingdom',['DALYs']].mean()
+uk_mean=uk['DALYs'].mean()
 print(uk_mean)
-france_mean=dalys_data.loc[dalys_data.Entity=='France',['DALYs']].mean()
+france_mean=dalys_data.loc[dalys_data.Entity=='France',['DALYs','Year']]
+france_mean=france_mean['DALYs'].mean()
 print(france_mean)
 #the mean of UK is larger than the mean of France
 
