@@ -13,8 +13,8 @@ print(dalys_data.loc[is_1990,'DALYs'])
 uk=dalys_data.loc[dalys_data.Entity=='United Kingdom',['DALYs','Year']]
 uk_mean=uk['DALYs'].mean()
 print(uk_mean)
-france_mean=dalys_data.loc[dalys_data.Entity=='France',['DALYs','Year']]
-france_mean=france_mean['DALYs'].mean()
+france=dalys_data.loc[dalys_data.Entity=='France',['DALYs','Year']]
+france_mean=france['DALYs'].mean()
 print(france_mean)
 #the mean of UK is larger than the mean of France
 
@@ -28,8 +28,8 @@ plt.show()
 
 low_income=dalys_data.loc[dalys_data.Entity=='World Bank Low Income',['DALYs','Year']]
 high_income=dalys_data.loc[dalys_data.Entity=='World Bank High Income',['DALYs','Year']]
-plt.plot(low_income.Year,low_income.DALYs,'r+-',label='low income countries')
-plt.plot(high_income.Year,high_income.DALYs,'b+-',label='high income countries')
+plt.plot(low_income.Year,low_income.DALYs,'ro-',label='low income countries')
+plt.plot(high_income.Year,high_income.DALYs,'bo-',label='high income countries')
 plt.xlabel('Year')
 plt.ylabel('DALYs')
 plt.title('DALYs over time, low income vs high income countries')
