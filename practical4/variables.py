@@ -9,7 +9,7 @@ f = d + e #total time of the second way
 print(c,f)
 '''
 because c=90<f=95
-the first way is faster than the second
+the first way (bus) is faster than the second (drive)
 '''
 
 x = True

@@ -1,21 +1,12 @@
 """
-BEGIN
-    DISPLAY "What's your weight (in kg)?"
-    INPUT x  // Read user's weight in kg
-
-    DISPLAY "What's your height (in m)?"
-    INPUT y  // Read user's height in meters
-
-    COMPUTE BMI = x / (y * y)  // Calculate BMI
-
-    IF BMI > 30 THEN
-        DISPLAY "You are obese"
-    ELSE IF BMI < 18.5 THEN
-        DISPLAY "You are too thin"
-    ELSE
-        DISPLAY "Congratulations! You have a normal weight"
-    END IF
-END
+ask for input of weight and height
+calculate the bmi
+if bmi>30
+print obese
+if not >30 and <18.5
+print too thin
+else
+print normal weight
 """
 x=float(input("what's your weight (in kg)"))
 y=float(input("what's your height (in m)"))

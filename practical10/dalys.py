@@ -25,7 +25,7 @@ plt.ylabel('DALYs in UK')
 plt.legend()
 plt.xticks(uk.Year,rotation=-75)
 plt.show()
-
+#answer to question.txt
 low_income=dalys_data.loc[dalys_data.Entity=='World Bank Low Income',['DALYs','Year']]
 high_income=dalys_data.loc[dalys_data.Entity=='World Bank High Income',['DALYs','Year']]
 plt.plot(low_income.Year,low_income.DALYs,'ro-',label='low income countries')
