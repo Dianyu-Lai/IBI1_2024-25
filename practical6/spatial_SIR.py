@@ -30,4 +30,3 @@ for t in range(100):
         plt.axis('off')
         plt.title(f'{t+1} day')
         plt.show()
-        #plt.savefig('spatial_SIR.png',format='png')
