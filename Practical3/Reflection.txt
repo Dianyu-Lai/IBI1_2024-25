@@ -1,4 +1,4 @@
-self reflection
-During this course, I have learnt version control, how to navigate Unix systems and how to write simple programs in Python.
+Self reflection
+During this course, I have learnt skills of version control, how to navigate Unix systems and how to write simple programs in Python.
 I also create a small website that I like very much!
-I have also learnt to write careful instructions when communicating online!
+I have also learnt to how to ask questions properly when communicating online!
