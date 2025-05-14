@@ -1,4 +1,4 @@
 Hello, my name is Dianyu Lai.
 I like drinking tea and eating chocolate biscuits.
-I am enjoying having IBI1 
-I am happy that I can push my repo from Visual Studio Code to GitHub
+I am enjoying learning IBI1.
+I am happy that I can push my repo from Visual Studio Code to GitHub.
