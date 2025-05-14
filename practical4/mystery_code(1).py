@@ -1,6 +1,6 @@
 # What does this piece of code do?
 # Answer:import two fuction from libraries (randint and ceil), and
-# repeat taking first_n and second_n (integer) from {1,2,3,4,5} with equal possibility until they are equal
+# repeat taking first_n and second_n (integer) from {1,2,3,4,5,6} with equal possibility until they are equal
 
 # Import libraries
 # randint generates a random integer within a specified inclusive range
