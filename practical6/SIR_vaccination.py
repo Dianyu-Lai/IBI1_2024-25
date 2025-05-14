@@ -9,14 +9,15 @@ infected_curve = []
 beta = 0.3
 gamma = 0.05
 
+#set the S, I, R initial populations
 for j in range(11):
     I = [1]
-    R = [int((population-I[0])*j/10)]
+    R = [round((population-I[0])*j/10)]
     S = [population - I[0] - R[0]]
 
     #simulate the infection and recovery process with vaccination rate
     for i in range(1000):
-        x = beta * I[i] / 10000#the probability of infection
+        x = beta * I[i] / population#the probability of infection
         b = np.random.choice([0,1],S[i],p = [1-x,x])#simulate the infection one time
         a = np.random.choice([0,1],I[i], p = [0.95,0.05])#simulate the recovery one time
 
