@@ -4,7 +4,7 @@ The length and subcellular localisation	of the human SOD2 protein:
 The range of percentage identities in the reported online BLAST	results:
     from 58.1 to 100%
 
-The alignment score	and percentage of identical	amino acids for each of	the three comparisons that you performed using Python:
+The alignment score and percentage of identical amino acids for each of the three comparisons that you perform using Python:
     The alignment score between human and mouse SOD2 sequences is: 1097.0, and the percentage of identical amino acids is: 90.09009009009009%
     The alignment score between human SOD2 sequence and random sequence is: -216.0, and the percentage of identical amino acids is: 4.954954954954955%
     The alignment score between mouse SOD2 sequence and random sequence is: -195.0, and the percentage of identical amino acids is: 5.8558558558558556%
