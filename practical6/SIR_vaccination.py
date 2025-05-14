@@ -1,7 +1,6 @@
 # import necessary libraries
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import cm
 
 #initialise the populations and basic constants
 population = 10000
@@ -31,7 +30,7 @@ for j in range(11):
 plt.figure(figsize = (6, 4), dpi = 150)
 
 #use the library to get some colors, and draw the lines of infected people with different vaccination rate
-colormap = plt.cm.get_cmap('viridis', 11)
+colormap = plt.get_cmap('viridis', 11)
 for j in range(11):
     color = colormap(j)
     plt.plot(infected_curve[j], label = f"{10*j}%",color = color)
