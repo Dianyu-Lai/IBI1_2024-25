@@ -1,0 +1,6 @@
+This week reflection was the hardest one I think.
+We used many new function and thoughts to finish the SIR (especially spatial SIR)
+it was hard but I think it is also interesting
+I am happy with the week practical.
+The operation like initialise a new array to avoid over-infection is very novel I think, but also useful.
+wish i can play happily with Python
