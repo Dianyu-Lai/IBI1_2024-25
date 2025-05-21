@@ -13,9 +13,9 @@ terms = collection.getElementsByTagName("term")
 
 # build a dictionary to initialse the "is_a" count for the 3 GO terms
 max_is_a = {
-    'biological_process': (None, 0),
-    'molecular_function': (None, 0),
-    'cellular_component': (None, 0)
+    'biological_process': ("", 0),
+    'molecular_function': ("", 0),
+    'cellular_component': ("", 0)
 }
 
 # Process each term
