@@ -3,7 +3,7 @@ from the data frame, i choose World Bank Low Income data and World Bank High Inc
 i will plot the line graph containing the two country types with the x-axis years and y-axis DALYs
 i expect to find higher income level countries have lower DALYs.
 
-code line 28-37
+code line 29-39
 
 Discussion: a significant difference in DALYs between low and high income countries can be observed from the plot.
 The plot shows that the DALYs of low income countries are generally lower than those of high income countries.
