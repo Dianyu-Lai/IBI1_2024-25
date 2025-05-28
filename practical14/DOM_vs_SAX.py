@@ -41,7 +41,8 @@ print('DOM parsing results')
 print_max_is_a(max_is_a)
 
 end = time.time()
-print("DOM parsing time:", end - start, "seconds")
+time1 = end - start
+print("DOM parsing time:", time1, "seconds")
 
 # Create a class object to handle the SAX events one tag at a time
 class GOHandler(xml.sax.ContentHandler):
@@ -112,9 +113,13 @@ print('\nSAX parsing results')
 print_max_is_a(handler.max_is_a)
 
 end = time.time()  # End timing
-print("SAX parsing time:", end - start, "seconds")
+time2 = end - start
+print("SAX parsing time:", time2, "seconds")
 
-print('SAX is faster than DOM')
+if time2 <time1:
+    print('SAX is faster than DOM')
+else:
+    print('DOM is faster than SAX')
 # SAX is faster than DOM for large files because it reads the file sequentially
 # without loading the entire XML tree into memory. It uses less memory and is more efficient
 # for big XML datasets.
